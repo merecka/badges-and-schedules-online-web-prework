@@ -1,5 +1,4 @@
 speakers = ["Edsger", "Ada", "Charles", "Alan", "Grace", "Linus", "Matz"]
-rooms = [1..7]
 
 def badge_maker(name)
   return "Hello, my name is #{name}."
@@ -17,7 +16,8 @@ def assign_rooms(speakers)
   room_assignments
 end
 
-def printer
-  puts batch_badge_creator
-  puts assign_rooms
+def printer(speakers)
+  batch_badge_creator(speakers).each{|x| puts x}
+  ## speakers.each{|x| puts batch_badge_creator(speakers)}
+  assign_rooms(speakers).each{|x| puts x}
 end
